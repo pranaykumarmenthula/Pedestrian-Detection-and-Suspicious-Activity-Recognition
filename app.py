@@ -128,7 +128,7 @@ if input_option == "Upload an Image":
     if uploaded_file is not None:
         image = Image.open(uploaded_file).convert("RGB")
         
-        st.image(image, caption="Original Image", use_column_width=True)
+        st.image(image, caption="Original Image", use_container_width=True)
         st.markdown("---")
         
         with st.spinner("Processing image..."):
@@ -142,17 +142,17 @@ if input_option == "Upload an Image":
         with col1:
             st.header("YOLOv8")
             img, exec_time = detection_results['YOLOv8']
-            st.image(img, caption=f"Processed by YOLOv8 in {exec_time:.2f}s", use_column_width=True)
+            st.image(img, caption=f"Processed by YOLOv8 in {exec_time:.2f}s", use_container_width=True)
             
         with col2:
             st.header("SSD")
             img, exec_time = detection_results['SSD']
-            st.image(img, caption=f"Processed by SSD in {exec_time:.2f}s", use_column_width=True)
+            st.image(img, caption=f"Processed by SSD in {exec_time:.2f}s", use_container_width=True)
 
         with col3:
             st.header("Faster R-CNN")
             img, exec_time = detection_results['Faster R-CNN']
-            st.image(img, caption=f"Processed by Faster R-CNN in {exec_time:.2f}s", use_column_width=True)
+            st.image(img, caption=f"Processed by Faster R-CNN in {exec_time:.2f}s", use_container_width=True)
 
 elif input_option == "Use Webcam (Coming Soon)":
     st.info("Webcam functionality is under development. Please use the image upload feature for now.")
